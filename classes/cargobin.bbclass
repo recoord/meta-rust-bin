@@ -51,7 +51,7 @@ CARGO_BUILD_FLAGS = "\
     ${EXTRA_CARGO_FLAGS} \
 "
 
-createbin_cargo_config() {
+create_cargo_config() {
     if [ "${RUST_BUILD}" != "${RUST_TARGET}" ]; then
         echo > ${CARGO_HOME}/config
         echo "[target.${RUST_BUILD}]" >> ${CARGO_HOME}/config
