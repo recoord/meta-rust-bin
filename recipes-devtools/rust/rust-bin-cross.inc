@@ -4,7 +4,7 @@ LICENSE = "Apache-2.0 | MIT"
 SECTION = "devel"
 
 inherit cross
-inherit rust-common
+inherit rust-common-bin
 
 # Required to link binaries
 DEPENDS += "gcc-cross-${TARGET_ARCH}"
@@ -28,7 +28,7 @@ def get_s(d):
         return "${WORKDIR}/rustc-nightly-${RUST_BUILD_TARGET}"
     else:
         return "${WORKDIR}/rustc-${PV}-${RUST_BUILD_TARGET}"
-  
+
 S = "${@get_s(d)}"
 
 # Relocating WORKDIR doesn't matter to installer
